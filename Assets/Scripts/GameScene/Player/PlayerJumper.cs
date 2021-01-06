@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-
 public class PlayerJumper : MonoBehaviour
 {
     [SerializeField] private float _topForce;

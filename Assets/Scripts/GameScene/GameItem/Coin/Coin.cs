@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : GameItem
+public class Coin : Item
 {
 
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tree : GameItem
+public class Tree : Item
 {
 
 }

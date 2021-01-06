@@ -162,9 +162,9 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
-  - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420033}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -189,12 +189,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d15af1f1e9eb617408e7a9f18a5ba8d7, type: 3}
+  m_Script: {fileID: 11500000, guid: badd9e5a79c9c9b4b9cc51303e179b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 3910547508529032528, guid: a11debeeff4ade749851840df9522a56, type: 3}
   _spawnPoint: {fileID: 341940927}
-  _secondBetweenSpawn: 3
+  _secondBetweenSpawn: 2
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -263,12 +263,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6937ddf4fa5e924286c3021493cfc1b, type: 3}
+  m_Script: {fileID: 11500000, guid: badd9e5a79c9c9b4b9cc51303e179b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 6730928712543535234, guid: 80ba3444f0e595a4e8fa172815662b28, type: 3}
   _spawnPoint: {fileID: 1672688627}
-  _secondBetweenSpawn: 2
+  _secondBetweenSpawn: 1
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9b0f437ce21319b4b9f2ef48b03f8970, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 10da10bafc933354fb59cfd823bd8541, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

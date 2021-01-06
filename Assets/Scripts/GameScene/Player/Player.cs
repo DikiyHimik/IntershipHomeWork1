@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Text _text;
     private int _score;
 
-    public event UnityAction GameOver;
+    public event UnityAction PlayerDied;
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     {
         if (collision.TryGetComponent<Coin>(out Coin coin))
         {
-            Destroy(coin.gameObject);
+            Destroy(collision.gameObject);
             _score++;
             _text.text = _score.ToString();
         }
@@ -33,6 +33,6 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        GameOver?.Invoke();
+        PlayerDied?.Invoke();
     }
 }

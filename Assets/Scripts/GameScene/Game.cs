@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameProcess : MonoBehaviour
+public class Game : MonoBehaviour
 {
     [SerializeField] private Player _player;
 
     public void OnEnable()
     {
-        _player.GameOver += OnGameOver;
+        _player.PlayerDied += OnGameOver;
     }
 
     public void OnDisable()
     {
-        _player.GameOver -= OnGameOver;
+        _player.PlayerDied -= OnGameOver;
     }
 
     public void OnGameOver()
