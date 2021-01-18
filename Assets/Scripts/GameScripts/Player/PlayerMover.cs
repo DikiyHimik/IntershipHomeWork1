@@ -8,11 +8,11 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private Collider2D _ground;
     [SerializeField] private Vector3 _startPosition;
     [SerializeField] private float _tapForce = 10;
-    [SerializeField] private float _horizontalSpeed;
+    [SerializeField] private float _speed;
 
     private Rigidbody2D _rigidbody;
     private Collider2D _collider;
-    private float _xSpeed;
+    private float _horizontalSpeed;
 
     private void Start()
     { 
@@ -22,10 +22,12 @@ public class PlayerMover : MonoBehaviour
         _collider = GetComponent<Collider2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        _xSpeed = _horizontalSpeed * Input.GetAxis("Horizontal");
-        transform.Translate(new Vector3(_xSpeed, 0, 0) * Time.deltaTime);
+        _horizontalSpeed = _speed * Input.GetAxis("Horizontal");
+
+        _rigidbody.velocity = new Vector2(_horizontalSpeed, _rigidbody.velocity.y);
+
         if (Input.GetKeyDown(KeyCode.Space) && _collider.IsTouching(_ground))
         {
             _rigidbody.AddForce(Vector2.up * _tapForce, ForceMode2D.Force);

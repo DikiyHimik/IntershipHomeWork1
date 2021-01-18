@@ -157,7 +157,7 @@ MonoBehaviour:
   _ground: {fileID: 1726060369}
   _startPosition: {x: -6, y: 0, z: 0}
   _tapForce: 500
-  _horizontalSpeed: 5
+  _speed: 5
 --- !u!61 &5370139
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -327,6 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _container: {fileID: 795625887}
   _capacity: 5
+  _secondsBetweenSpawn: 4
   _template: {fileID: 3477529156157183514, guid: 0be01ce10a484c74fa27425e626ed134,
     type: 3}
 --- !u!1 &296593534
@@ -478,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _container: {fileID: 296593534}
   _capacity: 4
+  _secondsBetweenSpawn: 3
   _template: {fileID: 1085515478986967396, guid: fef1e4c9f0939804cb3fc72aef334674,
     type: 3}
 --- !u!1 &655302961
@@ -700,6 +702,7 @@ GameObject:
   - component: {fileID: 1313229540}
   - component: {fileID: 1313229543}
   - component: {fileID: 1313229544}
+  - component: {fileID: 1313229545}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -801,6 +804,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aeb5feaa3af6664f9b911de4632dc5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 5370143}
+--- !u!114 &1313229545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313229539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92f42b4764cdfb4dbee021dbdd6f8fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreText: {fileID: 655302963}
   _player: {fileID: 5370143}
 --- !u!1 &1434004910
 GameObject:

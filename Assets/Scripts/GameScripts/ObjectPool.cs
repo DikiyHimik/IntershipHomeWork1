@@ -38,7 +38,7 @@ public class ObjectPool : MonoBehaviour
         {
             if (item.activeSelf == true)
             {
-                Vector3 point = _camera.WorldToViewportPoint(item.transform.position);
+                Vector3 point = _camera.ViewportToWorldPoint(item.transform.position);
                 if(item.transform.position.x < disablePoint.x)
                 {
                     item.SetActive(false);

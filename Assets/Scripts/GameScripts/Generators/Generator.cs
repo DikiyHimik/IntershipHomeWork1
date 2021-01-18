@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Generator : ObjectPool
 {
-    [SerializeField] private GameObject _template;
+    [SerializeField] protected float _secondsBetweenSpawn;
 
-    private float _secondsBetweenSpawn;
+    [SerializeField] private GameObject _template;
 
     private float _elapsedTime = 0;
 
     private void Start()
     {
-        _secondsBetweenSpawn = Random.Range(1, 3);
         Initialize(_template);
     }
 
@@ -25,7 +24,6 @@ public class Generator : ObjectPool
             if (TryGetObject(out GameObject item))
             {
                 _elapsedTime = 0;
-                _secondsBetweenSpawn = Random.Range(4, 7);
                 item.transform.position = transform.position;
                 item.SetActive(true);
 

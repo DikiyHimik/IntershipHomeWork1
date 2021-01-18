@@ -6,15 +6,17 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    private float _score;
     [SerializeField] private Text _text;
 
-    public event UnityAction PlayerDied;
+    private int _score;
+
+    public event UnityAction<int> ScoreChanging;
+    public event UnityAction GameOver;
 
     private void Start()
     {
         _score = 0;
-        _text.text = _score.ToString();
+        ScoreChanging?.Invoke(_score);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,7 +25,7 @@ public class Player : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             _score++;
-            _text.text = _score.ToString();
+            ScoreChanging?.Invoke(_score);
         }
         else
         {
@@ -33,6 +35,6 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        PlayerDied?.Invoke();
+        GameOver?.Invoke();
     }
 }

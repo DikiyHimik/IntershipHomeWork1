@@ -9,12 +9,12 @@ public class Game : MonoBehaviour
 
     public void OnEnable()
     {
-        _player.PlayerDied += OnGameOver;
+        _player.GameOver += OnGameOver;
     }
 
     public void OnDisable()
     {
-        _player.PlayerDied -= OnGameOver;
+        _player.GameOver -= OnGameOver;
     }
 
     public void OnGameOver()
