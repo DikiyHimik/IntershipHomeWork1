@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Generator : ObjectPool
+public class Generator : MonoBehaviour
 {
-    [SerializeField] protected float _secondsBetweenSpawn;
-
     [SerializeField] private GameObject _template;
+    [SerializeField] private ObjectPool _objectPool;
+
+    [SerializeField] protected float _secondsBetweenSpawn;
 
     private float _elapsedTime = 0;
 
     private void Start()
     {
-        Initialize(_template);
+        _objectPool.Initialize(_template);
     }
 
     private void Update()
@@ -21,14 +22,17 @@ public class Generator : ObjectPool
 
         if (_elapsedTime > _secondsBetweenSpawn)
         {
-            if (TryGetObject(out GameObject item))
-            {
-                _elapsedTime = 0;
-                item.transform.position = transform.position;
-                item.SetActive(true);
+            _elapsedTime = 0;
 
-                DisableObjectsAbroadScreen();
+            if (!_objectPool.TryGetObject(out GameObject item))
+            {
+                item = Instantiate(_template);
+                _objectPool.AddObjectInPool(item);
             }
+
+             _objectPool.SetObject(item, transform.position);
+
+            _objectPool.DisableObjectsAbroadScreen();
         }
     }
 }

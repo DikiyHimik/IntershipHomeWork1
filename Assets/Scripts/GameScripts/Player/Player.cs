@@ -10,13 +10,13 @@ public class Player : MonoBehaviour
 
     private int _score;
 
-    public event UnityAction<int> ScoreChanging;
+    public event UnityAction<int> CoinCollecting;
     public event UnityAction GameOver;
 
     private void Start()
     {
         _score = 0;
-        ScoreChanging?.Invoke(_score);
+        CoinCollecting?.Invoke(_score);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             _score++;
-            ScoreChanging?.Invoke(_score);
+            CoinCollecting?.Invoke(_score);
         }
         else
         {

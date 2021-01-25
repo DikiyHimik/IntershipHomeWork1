@@ -10,18 +10,17 @@ public class CoinCounter : MonoBehaviour
 
     private void Start()
     {
-        _player = FindObjectOfType<Player>();
         OnScoreChanging(0);
     }
 
     public void OnEnable()
     {
-        _player.ScoreChanging += OnScoreChanging;
+        _player.CoinCollecting += OnScoreChanging;
     }
 
     public void OnDisable()
     {
-        _player.ScoreChanging -= OnScoreChanging;
+        _player.CoinCollecting -= OnScoreChanging;
     }
 
     public void OnScoreChanging(int score)

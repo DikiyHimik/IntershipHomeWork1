@@ -12,7 +12,6 @@ public class PlayerMover : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
     private Collider2D _collider;
-    private float _horizontalSpeed;
 
     private void Start()
     { 
@@ -24,9 +23,7 @@ public class PlayerMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _horizontalSpeed = _speed * Input.GetAxis("Horizontal");
-
-        _rigidbody.velocity = new Vector2(_horizontalSpeed, _rigidbody.velocity.y);
+        _rigidbody.velocity = new Vector2(_speed, _rigidbody.velocity.y);
 
         if (Input.GetKeyDown(KeyCode.Space) && _collider.IsTouching(_ground))
         {
