@@ -6,11 +6,17 @@ using System.Linq;
 public class ObjectPool : MonoBehaviour
 {
     [SerializeField] private GameObject _container;
+    [SerializeField] private GameObject _template;
     [SerializeField] private float _capacity;
 
     private Camera _camera;
 
     private List<GameObject> _pool = new List<GameObject>();
+
+    private void Awake()
+    {
+        Initialize(_template);
+    }
 
     public void Initialize(GameObject prefab)
     {
@@ -25,26 +31,29 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    public bool TryGetObject(out GameObject result)
+    public GameObject GetObjectForCreating()
     {
-        result = _pool.FirstOrDefault(p => p.activeSelf == false);
-        return result != null;
+        GameObject creatingObject = TryGetObject();
+
+        if (creatingObject == null)
+        {
+            creatingObject = Instantiate(_template);
+            _pool.Add(gameObject);
+        }
+
+        return creatingObject;
     }
 
-    public void SetObject(GameObject prefab, Vector3 position)
+    public GameObject TryGetObject()
     {
-        prefab.transform.position = position;
-        prefab.SetActive(true);
-    }
-
-    public void AddObjectInPool(GameObject gameObject)
-    {
-        _pool.Add(gameObject);
+        GameObject result = _pool.FirstOrDefault(p => p.activeSelf == false);
+        return result;
     }
 
     public void DisableObjectsAbroadScreen()
     {
         Vector3 disablePoint = _camera.ViewportToWorldPoint(new Vector2(0, 0.5f));
+
         foreach (var item in _pool)
         {
             if (item.activeSelf == true)

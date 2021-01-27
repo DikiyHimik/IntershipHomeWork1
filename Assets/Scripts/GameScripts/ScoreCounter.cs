@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CoinCounter : MonoBehaviour
+public class ScoreCounter : MonoBehaviour
 {
     [SerializeField] private Text _scoreText;
     [SerializeField] private Player _player;

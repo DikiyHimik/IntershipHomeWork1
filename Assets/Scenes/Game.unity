@@ -325,8 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065db9baf12f74f49b9c881242d00e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _template: {fileID: 3477529156157183514, guid: 0be01ce10a484c74fa27425e626ed134,
-    type: 3}
   _objectPool: {fileID: 1706533866}
   _secondsBetweenSpawn: 4
 --- !u!1 &296593534
@@ -476,8 +474,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0063abce06b6ee479fa75f20fc664e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _template: {fileID: 1085515478986967396, guid: fef1e4c9f0939804cb3fc72aef334674,
-    type: 3}
   _objectPool: {fileID: 1623948126}
   _secondsBetweenSpawn: 3
 --- !u!1 &655302961
@@ -913,7 +909,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _container: {fileID: 296593534}
-  _capacity: 4
+  _template: {fileID: 1085515478986967396, guid: fef1e4c9f0939804cb3fc72aef334674,
+    type: 3}
+  _capacity: 0
 --- !u!4 &1623948127
 Transform:
   m_ObjectHideFlags: 0
@@ -958,7 +956,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _container: {fileID: 795625887}
-  _capacity: 4
+  _template: {fileID: 3477529156157183514, guid: 0be01ce10a484c74fa27425e626ed134,
+    type: 3}
+  _capacity: 0
 --- !u!4 &1706533867
 Transform:
   m_ObjectHideFlags: 0
