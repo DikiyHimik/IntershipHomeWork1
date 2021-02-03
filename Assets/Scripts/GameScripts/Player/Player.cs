@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private int _score;
 
     public event UnityAction<int> CoinCollecting;
-    public event UnityAction GameOver;
+    public event UnityAction Died;
 
     private void Start()
     {
@@ -27,14 +27,14 @@ public class Player : MonoBehaviour
             _score++;
             CoinCollecting?.Invoke(_score);
         }
-        else
+        else if (collision.TryGetComponent<Tree>(out Tree tree))
         {
             Die();
         }
     }
 
-    public void Die()
+    private void Die()
     {
-        GameOver?.Invoke();
+        Died?.Invoke();
     }
 }

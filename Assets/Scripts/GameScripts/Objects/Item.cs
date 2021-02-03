@@ -2,6 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeGenerator : Generator
+public class Item : MonoBehaviour
 {
 }

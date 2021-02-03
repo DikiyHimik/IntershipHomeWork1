@@ -322,7 +322,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 57480646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065db9baf12f74f49b9c881242d00e89, type: 3}
+  m_Script: {fileID: 11500000, guid: a4b04de264310514691e54e625d5dfef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _objectPool: {fileID: 1706533866}
@@ -441,6 +441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 614423426}
   - component: {fileID: 614423427}
+  - component: {fileID: 614423428}
   m_Layer: 0
   m_Name: CoinGenerator
   m_TagString: Untagged
@@ -472,6 +473,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0063abce06b6ee479fa75f20fc664e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &614423428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614423425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b04de264310514691e54e625d5dfef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _objectPool: {fileID: 1623948126}
@@ -584,6 +597,98 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1077988013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1077988014}
+  - component: {fileID: 1077988015}
+  - component: {fileID: 1077988016}
+  - component: {fileID: 1077988017}
+  m_Layer: 0
+  m_Name: ItemDeactivator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1077988014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077988013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1313229542}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1077988015
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077988013}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 10}
+  m_EdgeRadius: 0
+--- !u!114 &1077988016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077988013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a768c07cb4863e44e88ba3bfe9c56fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &1077988017
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077988013}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1127841065
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +874,7 @@ Transform:
   - {fileID: 1726060371}
   - {fileID: 57480647}
   - {fileID: 614423426}
+  - {fileID: 1077988014}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -911,7 +1017,7 @@ MonoBehaviour:
   _container: {fileID: 296593534}
   _template: {fileID: 1085515478986967396, guid: fef1e4c9f0939804cb3fc72aef334674,
     type: 3}
-  _capacity: 0
+  _capacity: 5
 --- !u!4 &1623948127
 Transform:
   m_ObjectHideFlags: 0
@@ -958,7 +1064,7 @@ MonoBehaviour:
   _container: {fileID: 795625887}
   _template: {fileID: 3477529156157183514, guid: 0be01ce10a484c74fa27425e626ed134,
     type: 3}
-  _capacity: 0
+  _capacity: 5
 --- !u!4 &1706533867
 Transform:
   m_ObjectHideFlags: 0

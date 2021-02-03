@@ -31,7 +31,7 @@ public class PlayerMover : MonoBehaviour
         }
     }
 
-    public void ResetPlayer()
+    private void ResetPlayer()
     {
         transform.position = _startPosition;
         _rigidbody.velocity = Vector2.zero;

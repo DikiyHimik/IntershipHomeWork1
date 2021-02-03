@@ -18,7 +18,7 @@ public class ObjectPool : MonoBehaviour
         Initialize(_template);
     }
 
-    public void Initialize(GameObject prefab)
+    private void Initialize(GameObject prefab)
     {
         _camera = Camera.main;
 
@@ -31,39 +31,23 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    public GameObject GetObjectForCreating()
+    public GameObject GetObject()
     {
-        GameObject creatingObject = TryGetObject();
+        GameObject item = TryGetObject();
 
-        if (creatingObject == null)
+        if (item == null)
         {
-            creatingObject = Instantiate(_template);
-            _pool.Add(gameObject);
+            item = Instantiate(_template);
+            _pool.Add(item);
         }
 
-        return creatingObject;
+        return item;
     }
 
-    public GameObject TryGetObject()
+    private GameObject TryGetObject()
     {
         GameObject result = _pool.FirstOrDefault(p => p.activeSelf == false);
         return result;
-    }
-
-    public void DisableObjectsAbroadScreen()
-    {
-        Vector3 disablePoint = _camera.ViewportToWorldPoint(new Vector2(0, 0.5f));
-
-        foreach (var item in _pool)
-        {
-            if (item.activeSelf == true)
-            {
-                if(item.transform.position.x < disablePoint.x)
-                {
-                    item.SetActive(false);
-                }
-            }
-        }
     }
 
     public void ResetPool()
