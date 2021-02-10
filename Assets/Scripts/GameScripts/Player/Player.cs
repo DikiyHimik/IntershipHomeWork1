@@ -6,17 +6,15 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Text _text;
-
     private int _score;
 
-    public event UnityAction<int> CoinCollecting;
+    public event UnityAction<int> CoinCollected;
     public event UnityAction Died;
 
     private void Start()
     {
         _score = 0;
-        CoinCollecting?.Invoke(_score);
+        CoinCollected?.Invoke(_score);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,7 +23,7 @@ public class Player : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             _score++;
-            CoinCollecting?.Invoke(_score);
+            CoinCollected?.Invoke(_score);
         }
         else if (collision.TryGetComponent<Tree>(out Tree tree))
         {

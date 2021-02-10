@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreCounter : MonoBehaviour
+public class ScorePresenter : MonoBehaviour
 {
     [SerializeField] private Text _scoreText;
     [SerializeField] private Player _player;
@@ -15,12 +15,12 @@ public class ScoreCounter : MonoBehaviour
 
     public void OnEnable()
     {
-        _player.CoinCollecting += OnScoreChanging;
+        _player.CoinCollected += OnScoreChanging;
     }
 
     public void OnDisable()
     {
-        _player.CoinCollecting -= OnScoreChanging;
+        _player.CoinCollected -= OnScoreChanging;
     }
 
     public void OnScoreChanging(int score)
