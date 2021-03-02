@@ -46,8 +46,7 @@ public class ObjectPool : MonoBehaviour
 
     private GameObject TryGetObject()
     {
-        GameObject result = _pool.FirstOrDefault(p => p.activeSelf == false);
-        return result;
+        return _pool.FirstOrDefault(p => p.activeSelf == false);
     }
 
     public void ResetPool()

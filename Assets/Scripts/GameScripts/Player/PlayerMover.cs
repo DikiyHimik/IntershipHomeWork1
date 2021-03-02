@@ -16,9 +16,10 @@ public class PlayerMover : MonoBehaviour
     private void Start()
     { 
         _rigidbody = GetComponent<Rigidbody2D>();
-        ResetPlayer();
 
         _collider = GetComponent<Collider2D>();
+
+        ResetPlayer();
     }
 
     private void FixedUpdate()
